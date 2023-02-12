@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Helmet } from 'react-helmet';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../../hooks/useTitle';
 
 const Register = () => {
 
     const { createUser } = useContext(AuthContext); 
+    useTitle('Register');
 
     const handleSubmit = event =>{
         event.preventDefault();
@@ -27,9 +28,6 @@ const Register = () => {
 
     return (
     <Form onSubmit={handleSubmit}>
-      <Helmet>
-        <title>Dragon News - Register</title>
-      </Helmet>
       <Form.Group className="mb-3" controlId="formBasicName">
         <Form.Label>Your Name</Form.Label>
         <Form.Control type="text" name="name" placeholder="Enter your name" />
