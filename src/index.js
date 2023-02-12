@@ -6,12 +6,15 @@ import reportWebVitals from './reportWebVitals';
 //react bootstrap css framework
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
+import { HelmetProvider } from 'react-helmet-async';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AuthProvider>
+      <HelmetProvider>
         <App />
+      </HelmetProvider>
     </AuthProvider>
   </React.StrictMode>
 );
